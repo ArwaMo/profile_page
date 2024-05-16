@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:profile/screens/doctor_profile/components/clinic_info_widget.dart';
+import 'package:profile/screens/doctor_profile/components/communication_widget.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   const DoctorProfileScreen({super.key});
@@ -28,11 +30,11 @@ class DoctorProfileScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 4,
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Column(
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -47,56 +49,29 @@ class DoctorProfileScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 14,
                         ),
                         Row(
                           children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(13)),
-                                color: Color(0xfffeeada),
-                              ),
-                              child: IconButton(
-                                  color: const Color(0xfffeb76e),
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.email)),
-                            ),
-                            const SizedBox(
+                            CommunicationWidget(
+                                color1: Color(0xfffeeada),
+                                color2: Color(0xfffeb76e),
+                                icon: Icons.email),
+                            SizedBox(
                               width: 10,
                             ),
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(13)),
-                                color: Color(0xfffdf0f3),
-                              ),
-                              child: IconButton(
-                                  color: const Color(0xfff37c88),
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.phone)),
-                            ),
-                            const SizedBox(
+                            CommunicationWidget(
+                                color1: Color(0xfffdf0f3),
+                                color2: Color(0xfff37c88),
+                                icon: Icons.phone),
+                            SizedBox(
                               width: 10,
                             ),
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(13)),
-                                color: Color(0xffeaecf1),
-                              ),
-                              child: IconButton(
-                                  color: const Color(0xffaaaab5),
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.videocam_rounded)),
-                            ),
+                            CommunicationWidget(
+                                color1: Color(0xffeaecf1),
+                                color2: Color(0xffaaaab5),
+                                icon: Icons.videocam_rounded),
                           ],
                         )
                       ],
@@ -131,77 +106,20 @@ class DoctorProfileScreen extends StatelessWidget {
                     flex: 3,
                     child: Column(
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.location_on_outlined,
-                              color: Color(0xffa4a4a4),
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Address',
-                                  style: TextStyle(
-                                    color: Color(0xff4b4b4b),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Text(
-                                  'House # 2, Road # 5, Green \nRoad Dhanmondi, Dhaka',
-                                  style: TextStyle(
-                                    color: Color(0xffa4a4a4),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                        ClinicInfoWidget(
+                          icon: Icons.location_on_outlined,
+                          text1: 'Address',
+                          text2:
+                              'House # 2, Road # 5, Green \nRoad Dhanmondi, Dhaka',
                         ),
                         SizedBox(
                           height: 16,
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.access_time,
-                              color: Color(0xffa4a4a4),
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Daily Practict',
-                                  style: TextStyle(
-                                    color: Color(0xff4b4b4b),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Text(
-                                  'Monday - Friday \nOpen till 7 Pm',
-                                  style: TextStyle(
-                                    color: Color(0xffa4a4a4),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        )
+                        ClinicInfoWidget(
+                          icon: Icons.access_time,
+                          text1: 'Daily Practict',
+                          text2: 'Monday - Friday \nOpen till 7 Pm',
+                        ),
                       ],
                     ),
                   ),

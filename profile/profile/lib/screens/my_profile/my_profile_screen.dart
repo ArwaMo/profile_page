@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:profile/widgets/card_widget.dart';
+import 'package:profile/screens/my_profile/components/card_widget.dart';
 
 class MyProfileScreen extends StatelessWidget {
   const MyProfileScreen({super.key});
